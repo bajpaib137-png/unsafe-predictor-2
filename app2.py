@@ -524,7 +524,7 @@ elif st.session_state.page == 6:
     st.subheader("Scenario Response Breakdown")
     scenario_ids = ['M1', 'M2', 'M3', 'C1', 'C2', 'C3']
     code_labels  = {0: "Safe", 1: "Partial", 2: "Unsafe Error", 3: "Violation"}
-    code_colors  = {0: "green", 1: "orange", 2: "red", 3: "darkred"}
+    code_colors  = {0: "green", 1: "orange", 2: "red", 3: "red"}
 
     cols = st.columns(6)
     for i, (sid, code) in enumerate(zip(scenario_ids, d['scenario_codes'])):
