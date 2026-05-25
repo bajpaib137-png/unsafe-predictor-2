@@ -1,16 +1,18 @@
 import streamlit as st
-import joblib
+import pickle
 import json
 import numpy as np
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-model  = joblib.load(os.path.join(BASE_DIR, 'model_v2 (1).pkl'))
-scaler = joblib.load(os.path.join(BASE_DIR, 'scaler_v2 (1).pkl'))
-with open(os.path.join(BASE_DIR, 'benchmarks (1).json'), 'r') as f:
+with open(os.path.join(BASE_DIR, 'model_final.pkl'), 'rb') as f:
+    model = pickle.load(f)
+with open(os.path.join(BASE_DIR, 'scaler_final.pkl'), 'rb') as f:
+    scaler = pickle.load(f)
+with open(os.path.join(BASE_DIR, 'benchmarks_final.json'), 'r') as f:
     bench = json.load(f)
-
+    
 st.set_page_config(page_title="Workplace Decision Risk Assessment", layout="centered")
 
 st.markdown("""
